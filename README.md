@@ -41,3 +41,15 @@ $ kubectl version
 $ kubeadm version 
 $ kubelet version 
 ```
+
+### Steps to Initialize master or control-plane
+```
+$ sudo kubeadm init --apiserver-advertise-address=192.168.4.87
+$ kubectl version 
+$ sudo cat /etc/kubernetes/admin.conf 
+$ mkdir ~/.kube
+$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+$ kubectl version 
+$ kubectl get nodes 
+```
