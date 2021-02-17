@@ -37,7 +37,7 @@ spec:
   replicas: 4
   strategy:
     type: RollingUpdate
-    rollingUpdaste:
+    rollingUpdate:
       maxUnavailable: 2
 ---
 apiVersion: v1
