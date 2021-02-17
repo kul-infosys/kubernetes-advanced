@@ -20,10 +20,10 @@ spec:
         name: httpd
     spec: 
       tolerations:
-        - key: taint
-          operator: Equal
-          value: true
-          effect: NoSchedule
+        - key: "taint"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
       containers:
         - name: httpd
           image: httpd
