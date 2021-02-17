@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: kul
+  annotations: 
+    repo: https://github.com/kul-infosys/kubernetes-advanced.git
+    maintainer: Kulbhushan Mayer
+  labels: 
+    day: 3
+    client: Infy
+    name: httpd
+  namespace: kul
+spec: 
+  template:
+    metadata:
+      labels:  
+        day: 3
+        client: Infy
+        name: httpd
+    spec: 
+      containers:
+        - name: httpd
+          image: httpd
+  selector:
+    matchLabels:  
+      day: 3
+      client: Infy
+      name: httpd
+  replicas: 4
+        
