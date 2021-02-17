@@ -45,10 +45,10 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      NodePort: 31000 # Should be in range of 30000-32767
+      nodePort: 31000 # Should be in range of 30000-32767
     - protocol: TCP
       port: 8080
-      NodePort: 31001
+      nodePort: 31001
   selector: 
     day: "3"
     client: Infy
