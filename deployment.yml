@@ -9,6 +9,7 @@ metadata:
     day: "3"
     client: Infy
     name: httpd
+    type: deployment
   namespace: kul
 spec: 
   template:
