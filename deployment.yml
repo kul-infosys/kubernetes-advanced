@@ -26,7 +26,7 @@ spec:
           effect: "NoSchedule"
       containers:
         - name: httpd
-          image: httpd
+          image: thinknyx/vote:1.0
       nodeSelector:
         env: perf
   selector:
@@ -35,6 +35,10 @@ spec:
       client: Infy
       name: httpd
   replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdaste:
+      maxUnavailable: 2
 ---
 apiVersion: v1
 kind: Service
