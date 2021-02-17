@@ -22,6 +22,8 @@ spec:
       containers:
         - name: httpd
           image: httpd
+      nodeSelector:
+        env: perf
   selector:
     matchLabels:  
       day: "3"
