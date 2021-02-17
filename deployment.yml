@@ -46,11 +46,11 @@ spec:
     - protocol: TCP
       port: 80
       nodePort: 31000 # Should be in range of 30000-32767
-      name: Port to Access Apache
+      name: access-apache
     - protocol: TCP
       port: 8080
       nodePort: 31001
-      name: Dummy Port
+      name: dummy-ort
   selector: 
     day: "3"
     client: Infy
