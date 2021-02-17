@@ -19,6 +19,11 @@ spec:
         client: Infy
         name: httpd
     spec: 
+      tolerations:
+        - key: taint
+          operator: Equal
+          value: true
+          effect: NoSchedule
       containers:
         - name: httpd
           image: httpd
