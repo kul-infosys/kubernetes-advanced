@@ -55,6 +55,10 @@ spec:
             - name: env-properties
               mountPath: "/env"
               readOnly: true
+            #- name: secret-key
+              #mountPath: "/key"
+              #readOnly: true
+
       # Uncommend when you have created your docker secret in your cluster, currently we have created any secret so its commented
       
       #imagePullSecrets:
@@ -73,6 +77,9 @@ spec:
                 path: qa
               - key: prod.properties
                 path: prod
+        #- name: secret-key
+          #secret:
+            #secretName: ssh-private-key
   selector:
     matchLabels:  
       day: "3"
