@@ -49,9 +49,26 @@ spec:
           envFrom:
             - configMapRef:
                 name: kul
+          
+          # Added to read configMaps values as files inside the container
+          volumeMounts:
+            - name: env.properties
+              mountPath: "/env"
+              readOnly: true
 
       nodeSelector:
         env: perf
+      volumes:
+        - name: env.properties
+          configMap: 
+            name: kul-for-files
+            items:
+              - key: dev.properties
+                path: dev
+              - key: qa.properties
+                path: qa
+              - key: prod.properties
+                path: prod
   selector:
     matchLabels:  
       day: "3"
