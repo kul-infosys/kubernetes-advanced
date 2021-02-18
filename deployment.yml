@@ -39,12 +39,16 @@ spec:
               cpu: "500m"
 
           # Adding Environment Variables
-
           env: 
             - name: DB_USER
               value: mydbuser
             - name: DB_Sever
               value: myserver.com
+
+          # Using Envrionment Variable with ConfigMaps
+          envFrom:
+            - configMapRef:
+                name: kul
 
       nodeSelector:
         env: perf

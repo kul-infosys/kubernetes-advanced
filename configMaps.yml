@@ -6,3 +6,5 @@ data:
   DB_PORT: "3306"
   DB_ADMIN_USER: admin
   QUEUE_MANAGER_SERVER: "qm.com"
+  QUEUE_MANAGER_PORT: "1234"
+  QUEUE_MANAGER_USER: "qm.user"
