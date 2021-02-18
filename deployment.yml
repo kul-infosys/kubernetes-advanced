@@ -38,6 +38,14 @@ spec:
               memory: "128Mi"
               cpu: "500m"
 
+          # Adding Environment Variables
+
+          env: 
+            - name: DB_USER
+              value: mydbuser
+            - name: DB_Sever
+              value: myserver.com
+
       nodeSelector:
         env: perf
   selector:
