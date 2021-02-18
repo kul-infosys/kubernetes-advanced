@@ -52,14 +52,14 @@ spec:
           
           # Added to read configMaps values as files inside the container
           volumeMounts:
-            - name: env.properties
+            - name: env-properties
               mountPath: "/env"
               readOnly: true
 
       nodeSelector:
         env: perf
       volumes:
-        - name: env.properties
+        - name: env-properties
           configMap: 
             name: kul-for-files
             items:
