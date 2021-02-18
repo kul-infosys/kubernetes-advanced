@@ -26,17 +26,17 @@ spec:
           effect: "NoSchedule"
       containers:
         - name: httpd
-          image: thinknyx/vote:1.0
+          image: httpd
 
           # Adding Resrouce Quota to ensure minimum availablity of resources to Schedule the Pod on stable node and post scheduling it should not consume extra resource because some leakage or bug
 
           resources:
             requests: 
-              memory: "8000Mi"
-              cpu: "4000m"
+              memory: "64Mi"
+              cpu: "250m"
             limits: 
-              memory: "16000Mi"
-              cpu: "6000m"
+              memory: "128Mi"
+              cpu: "500m"
 
       nodeSelector:
         env: perf
