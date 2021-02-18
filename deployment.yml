@@ -55,6 +55,10 @@ spec:
             - name: env-properties
               mountPath: "/env"
               readOnly: true
+      # Uncommend when you have created your docker secret in your cluster, currently we have created any secret so its commented
+      
+      #imagePullSecrets:
+        #- name: dockerauth
 
       nodeSelector:
         env: perf
