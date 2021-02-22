@@ -5,6 +5,9 @@ metadata:
   labels: 
     name: ds-demo
 spec:
+  selector:
+    matchLabels:
+      name: ds-demo
   template: 
     metadata:
       labels:
