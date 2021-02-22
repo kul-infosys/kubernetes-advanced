@@ -21,5 +21,5 @@ spec:
         - name: hostpath
           hostPath:
             path: /opt/data
-            type: CreateOrDirectory
+            type: DirectoryOrCreate
 
