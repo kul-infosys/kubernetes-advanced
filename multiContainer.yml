@@ -21,11 +21,14 @@ spec:
       periodSeconds: 30
       
   - name: second-container
-    image: k8s.gcr.io/busybox
+    image: debian
     volumeMounts:
       - name: htdocs
         mountPath: /tmp
-    args:
-      - /bin/sh
-      - -c
-      - echo <br>`date`</br> >> /tmp/index.html && sleep 5 && echo <br>`date`</br> >> /tmp/index.html && sleep 5
+    command: ["/bin/sh", "-c"]
+    args: 
+      - while date; do
+          date >> /tmp/index.html
+          sleep 5;
+        done
+        
