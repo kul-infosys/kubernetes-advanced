@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostpath-demo
+spec:
+  selector:
+    matchLabels:
+      app: hostpath-demo
+  template:
+    metadata:
+      labels:
+        app: hostpath-demo
+    spec:
+      containers:
+      - name: hostpath-demo
+        image: httpd
+        volumeMounts:
+          - mountPath: /usr/local/apache2/htdocs
+            name: hostpath
+      volumes:
+        - name: hostpath
+          hostPath:
+            path: /opt/data
+            type: CreateOrDirectory
+
