@@ -29,11 +29,11 @@ metadata:
 spec:
   containers:
   - name: liveness-tcp-socket
-    image: httpd
+    image: kulbhushanmayer/tomcat:9.0.38
     ports:
-      - containerPort: 80
+      - containerPort: 8080
     livenessProbe:
       tcpSocket:
-        port: 80
+        port: 8080
       initialDelaySeconds: 5
       periodSeconds: 20
