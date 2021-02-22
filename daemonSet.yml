@@ -18,7 +18,8 @@ spec:
           operator: "Equal"
           value: "true"
           effect: "NoSchedule"
-          
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
       containers:
         - name: httpd
           image: httpd
