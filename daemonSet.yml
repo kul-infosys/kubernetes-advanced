@@ -13,6 +13,12 @@ spec:
       labels:
         name: ds-demo
     spec:
+      tolerations:
+        - key: "taint"
+          operator: "Equal"
+          value: "true"
+          effect: "NoSchedule"
+          
       containers:
         - name: httpd
           image: httpd
