@@ -31,4 +31,17 @@ spec:
           date >> /tmp/index.html
           sleep 5;
         done
-        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd
+spec:
+  type: NodePort
+  selector:
+    name: multi-container
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 32000
+    name: apache
