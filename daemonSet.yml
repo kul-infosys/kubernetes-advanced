@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-demo
+  labels: 
+    name: ds-demo
+spec:
+  template: 
+    metadata:
+      labels:
+        name: ds-demo
+    spec:
+      containers:
+        - name: httpd
+          image: httpd
