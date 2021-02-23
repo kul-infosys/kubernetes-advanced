@@ -7,14 +7,14 @@ spec:
     apiVersion: "apps/v1"
     kind: Deployment
     name: autoscale-tester
-updatePolicy:
-  updateMode: "Off"
-resourcePolicy:
-  containerPolicies:
-    - containerName: autoscale-tester
-      minAllowed:
-        cpu: "500m"
-        memory: "500Mi"
-      maxAllowed:
-        cpu: "4"
-        memory: "8Gi"
+  updatePolicy:
+    updateMode: "Off"
+  resourcePolicy:
+    containerPolicies:
+      - containerName: autoscale-tester
+        minAllowed:
+          cpu: "500m"
+          memory: "500Mi"
+        maxAllowed:
+          cpu: "4"
+          memory: "8Gi"
