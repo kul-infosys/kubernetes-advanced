@@ -12,6 +12,8 @@ spec:
       labels:
         run: webapp
     spec:
+      nodeSelector:
+        day: 7
       containers:
       - name: webapp
         image: thinknyx/vote:1.0
