@@ -13,7 +13,7 @@ spec:
         run: webapp
     spec:
       nodeSelector:
-        day: 7
+        day: "7"
       containers:
       - name: webapp
         image: thinknyx/vote:1.0
