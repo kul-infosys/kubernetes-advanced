@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: autoscale-tester
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: autoscale-tester
+ template:
+   metadata:
+     labels:
+       app: autoscale-tester
+   spec:
+     containers:
+     - args: [ "--vm", "1", "--vm-bytes", "850M", "--vm-hang", "1"]
+       command:
+       - stress
+       image: polinux/stress
+       name: autoscale-tester
+       resources:
+         limits:
+           cpu: "1"
+           memory: 1000Mi
+         requests:
+           cpu: "1"
+           memory: 1000Mi
